@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "650594605813",
+    "project_id": "mimamori-anshin",
+    "storage_bucket": "mimamori-anshin.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:650594605813:android:c1664ba83a8d5300f343bc",
+        "android_client_info": {
+          "package_name": "com.example.mimamori_anshin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtxCjX06qHkutr3IWkterqG9N6rV8WIGU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
