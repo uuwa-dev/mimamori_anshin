@@ -1,16 +1,6 @@
-# mimamori_anshin
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# 実装規則
+- flutterコマンドの先頭にはfvmを追加すること。
+- fvvm + repository設計でコードを構築すること。
+- go_routerを使用して画面遷移を実装すること（画面遷移以外の実装はgoRouterServiceクラスでコントロールすること）
+- コメントは極力少なめにすること。
+- 再利用可能となりそうな色やサイズ等は共通で使用できるように管理する。
