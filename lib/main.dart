@@ -1,45 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'screens/splash_screen.dart';
-import 'screens/role_selection_screen.dart';
-import 'screens/parent_home_screen.dart';
-import 'screens/child_list_screen.dart';
-import 'screens/parent_destination_map_screen.dart';
-import 'screens/parent_settings_screen.dart';
-import 'screens/child_home_screen.dart';
-import 'screens/child_destination_list_screen.dart';
-import 'screens/child_destination_map_screen.dart';
-import 'screens/child_destination_register_screen.dart';
-import 'screens/child_destination_edit_screen.dart';
+import 'go_router_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.watch(goRouterProvider);
+    return MaterialApp.router(
       title: 'Mimamori Anshin',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
-      routes: {
-        '/roleSelection': (context) => const RoleSelectionScreen(),
-        '/parentHome': (context) => const ParentHomeScreen(),
-        '/childList': (context) => const ChildListScreen(),
-        '/parentDestinationMap': (context) => const ParentDestinationMapScreen(),
-        '/parentSettings': (context) => const ParentSettingsScreen(),
-        '/childHome': (context) => const ChildHomeScreen(),
-        '/childDestinationList': (context) => const ChildDestinationListScreen(),
-        '/childDestinationMap': (context) => const ChildDestinationMapScreen(),
-        '/childDestinationRegister': (context) => const ChildDestinationRegisterScreen(),
-        '/childDestinationEdit': (context) => const ChildDestinationEditScreen(),
-      },
+      routerConfig: router,
     );
   }
 }
