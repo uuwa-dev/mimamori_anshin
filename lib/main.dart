@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mimamori_anshin/constants/app_style.dart';
 
 import 'go_router_provider.dart';
 
@@ -16,11 +17,10 @@ class MyApp extends ConsumerWidget {
     return MaterialApp.router(
       title: 'Mimamori Anshin',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
         useMaterial3: true,
       ),
       routerConfig: router,
     );
   }
 }
-
