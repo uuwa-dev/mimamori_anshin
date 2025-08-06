@@ -4,7 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'screens/splash_screen.dart';
 import 'screens/role_selection_screen.dart';
 import 'screens/parent_home_screen.dart';
-import 'screens/child_list_screen.dart';
+import 'screens/parent_child_list_screen.dart';
 import 'screens/parent_destination_map_screen.dart';
 import 'screens/parent_settings_screen.dart';
 import 'screens/child_home_screen.dart';
@@ -24,7 +24,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
           path: '/parentHome',
           builder: (context, state) => const ParentHomeScreen()),
       GoRoute(
-          path: '/childList', builder: (context, state) => const ChildListScreen()),
+          path: '/parentChildList', builder: (context, state) => const ParentChildListScreen()),
       GoRoute(
           path: '/parentDestinationMap',
           builder: (context, state) => const ParentDestinationMapScreen()),
