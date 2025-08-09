@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lottie/lottie.dart';
 
 const double _cardSpacing = 16;
 
@@ -18,50 +17,30 @@ class RoleSelectionScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.blue.shade200, Colors.blue.shade600],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
+        decoration: const BoxDecoration(color: Color(0xFFF5F5F5)),
         padding: const EdgeInsets.all(_cardSpacing),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Lottie
-            Lottie.asset(
-              'assets/lottie/role_selection.json',
-              width: 200,
-              height: 200,
-              fit: BoxFit.cover,
-            ),
-            const SizedBox(height: 24),
-            // カード群
             _buildRoleCard(
               context,
               icon: Icons.person,
-              label: '保護者',
-              description: 'お子さまの利用状況を管理',
-              color: Colors.teal.shade400,
+              label: '保護者はこちら',
+              description: 'お子さまの行動状況を確認できます',
+              color: const Color(0xFFF18D9E),
               route: '/parentHome',
             ),
             const SizedBox(height: _cardSpacing),
             _buildRoleCard(
               context,
               icon: Icons.child_care,
-              label: '子ども',
-              description: '学習＆ゲームを楽しもう！',
-              color: Colors.pink.shade300,
+              label: '子どもはこちら',
+              description: 'お出かけする前に報告しよう！',
+              color: const Color(0xFF5BC8AC),
               route: '/childHome',
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        mini: true,
-        onPressed: () => context.go('/settings'),
-        child: const Icon(Icons.settings),
       ),
     );
   }
@@ -89,11 +68,11 @@ class RoleSelectionScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Hero(tag: 'role-$label', child: Icon(icon, size: 56, color: Colors.white)),
+              Hero(tag: 'role-$label', child: Icon(icon, size: 56)),
               const SizedBox(height: 12),
-              Text(label, style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.white)),
+              Text(label, style: Theme.of(context).textTheme.headlineSmall),
               const SizedBox(height: 8),
-              Text(description, textAlign: TextAlign.center, style: const TextStyle(color: Colors.white70)),
+              Text(description, textAlign: TextAlign.center),
             ],
           ),
         ),
